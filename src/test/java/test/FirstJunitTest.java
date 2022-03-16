@@ -23,7 +23,7 @@ public class FirstJunitTest {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
         String name = System.getProperty("name");
-        String passw = System.getProperty("password");
+        String passw = System.getProperty("passw");
         String path = System.getProperty("path");
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "700x1080";

@@ -45,7 +45,6 @@ public class FirstJunitTest {
 
     @Test
     void FormRun() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
         step("Открываем главную страницу", () -> {
             open("/automation-practice-form");
         });

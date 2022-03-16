@@ -27,7 +27,7 @@ public class FirstJunitTest {
         String remoteBrowser = System.getProperty("remoteBrowser");
 
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
+        Configuration.browserSize = "700x1080";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC",true);

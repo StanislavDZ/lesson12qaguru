@@ -25,16 +25,15 @@ public class FirstJunitTest {
         String user = System.getProperty("user");
         String password = System.getProperty("password");
         String remoteBrowser = System.getProperty("remoteBrowser");
-
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "700x1080";
-
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC",true);
         capabilities.setCapability("enableVideo",true);
         Configuration.browserCapabilities = capabilities;
-       // Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-        Configuration.remote = "https://" + user + ":" + password + "@" + remoteBrowser;
+        //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        //Configuration.remote = "https://" + user + ":" + password + "@" + remoteBrowser;
+        Configuration.remote = "https://" + user + ":" + password + remoteBrowser;
     }
 
     @AfterAll

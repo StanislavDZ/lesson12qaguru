@@ -22,10 +22,9 @@ public class FirstJunitTest {
     static void beforeAll() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
-        //String user = System.getProperty("user");
-        //String password = System.getProperty("password");
-        //String remoteBrowser = System.getProperty("remoteBrowser");
-        String remoteParams = System.getProperty("remoteParams");
+        String name = System.getProperty("name");
+        String passw = System.getProperty("password");
+        String path = System.getProperty("path");
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "700x1080";
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -33,8 +32,7 @@ public class FirstJunitTest {
         capabilities.setCapability("enableVideo",true);
         Configuration.browserCapabilities = capabilities;
         //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-        //Configuration.remote = "https://" + user + ":" + password + "@" + remoteBrowser;
-        Configuration.remote = remoteParams;
+        Configuration.remote = "https://" + name + ":" + passw + path;
     }
 
     @AfterAll

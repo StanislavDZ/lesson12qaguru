@@ -21,11 +21,11 @@ public class FirstJunitTest {
     @BeforeAll
     static void beforeAll() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-/*
+
         String user = System.getProperty("user");
         String password = System.getProperty("password");
         String remoteBrowser = System.getProperty("remoteBrowser");
-*/
+
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "700x1080";
 

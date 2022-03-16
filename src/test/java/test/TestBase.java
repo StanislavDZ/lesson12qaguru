@@ -17,9 +17,9 @@ public class TestBase {
     static void setUp() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
-        String user = System.getProperty("user");
-        String password = System.getProperty("password");
-        String browser = System.getProperty("selenoid.autotests.cloud/wd/hub");
+        String user = System.getProperty("user1");
+        String password = System.getProperty("1234");
+        String browser = System.getProperty("browser");
 
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "700x1080";

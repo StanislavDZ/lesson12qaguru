@@ -19,7 +19,7 @@ public class TestBase {
 
         String user = System.getProperty("user");
         String password = System.getProperty("password");
-        String browser = System.getProperty("browser");
+        String browser = System.getProperty("selenoid.autotests.cloud/wd/hub");
 
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "700x1080";

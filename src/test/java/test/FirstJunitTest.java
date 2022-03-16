@@ -21,11 +21,11 @@ public class FirstJunitTest {
     @BeforeAll
     static void beforeAll() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-
+/*
         String user = System.getProperty("user");
         String password = System.getProperty("password");
         String remoteBrowser = System.getProperty("remoteBrowser");
-
+*/
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "700x1080";
 
@@ -33,11 +33,12 @@ public class FirstJunitTest {
         capabilities.setCapability("enableVNC",true);
         capabilities.setCapability("enableVideo",true);
         Configuration.browserCapabilities = capabilities;
+       // Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
         Configuration.remote = "https://" + user + ":" + password + "@" + remoteBrowser;
     }
 
     @AfterAll
-    void addAttachments () {
+    static void addAttachments () {
         Attach.screenshotAs("Screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();

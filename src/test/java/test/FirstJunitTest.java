@@ -1,14 +1,9 @@
 package test;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 
 import static com.codeborne.selenide.Condition.text;
@@ -16,35 +11,10 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-public class FirstJunitTest {
-
-    @BeforeAll
-    static void beforeAll() {
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-
-        String name = System.getProperty("name");
-        String passw = System.getProperty("passw");
-        String path = System.getProperty("path");
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "700x1080";
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("enableVNC",true);
-        capabilities.setCapability("enableVideo",true);
-        Configuration.browserCapabilities = capabilities;
-        //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-        Configuration.remote = "https://" + name + ":" + passw + path;
-    }
-
-    @AfterAll
-    static void addAttachments () {
-        Attach.screenshotAs("Screenshot");
-        Attach.pageSource();
-        Attach.browserConsoleLogs();
-        Attach.addVideo();
-    }
-
+public class FirstJunitTest extends TestBase {
     @Test
     void FormRun() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
         step("Открываем главную страницу", () -> {
             open("/automation-practice-form");
         });
@@ -81,7 +51,7 @@ public class FirstJunitTest {
             $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("13 April,1987"));
             $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("Computer Science, Arts"));
             $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Sports, Reading, Music"));
-              //$(".table-responsive").$(byText("Picture")).parent().shouldHave(text("pic.png"));
+            //$(".table-responsive").$(byText("Picture")).parent().shouldHave(text("pic.png"));
             $(".table-responsive").$(byText("Address")).parent().shouldHave(text("Taxes, BestCh.St 17"));
             $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("NCR Delhi"));
         });

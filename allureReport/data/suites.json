@@ -1,0 +1,26 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "test.FirstJunitTest",
+    "children" : [ {
+      "name" : "FormRun()",
+      "uid" : "9e3e8e388bc3ecd4",
+      "parentUid" : "9efc1e94616b0e8ee114e068d9fed27f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1647812553439,
+        "stop" : 1647812578562,
+        "duration" : 25123
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "9efc1e94616b0e8ee114e068d9fed27f"
+  } ]
+}

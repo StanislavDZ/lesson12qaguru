@@ -52,7 +52,7 @@ public class FirstJunitTest extends TestBase {
             $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("Computer Science, Arts"));
             $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Sports, Reading, Music"));
             //$(".table-responsive").$(byText("Picture")).parent().shouldHave(text("pic.png"));
-            $(".table-responsive").$(byText("Address")).parent().shouldHave(text("Taxe, BestCh.St 17"));
+            $(".table-responsive").$(byText("Address")).parent().shouldHave(text("Taxes, BestCh.St 17"));
             $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("NCR Delhi"));
         });
 
